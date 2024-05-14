@@ -23,6 +23,7 @@ int main() {
 
 Claro, vamos continuar com o segundo módulo do nosso curso de programação em C.
 
+```markdown
 # Módulo 2: Fundamentos da Linguagem C
 
 ## 1. Variáveis e tipos de dados
@@ -97,40 +98,66 @@ int* p = &x;
 
 No próximo módulo, exploraremos estruturas de dados em C. Fique ligado! 😊
 
-# Módulo 4: Estruturas de Dados em C
+# Módulo 5: Programação Avançada em C
 
-## 1. Arrays
-Um array é uma coleção de elementos do mesmo tipo. Você pode acessar os elementos de um array usando um índice.
-
-```c
-int numeros[5] = {1, 2, 3, 4, 5};
-```
-
-## 2. Strings
-Em C, as strings são arrays de caracteres terminados por um caractere nulo (`\0`).
+## 1. Alocação dinâmica de memória
+A alocação dinâmica de memória permite que você reserve memória durante a execução do programa. As funções `malloc()`, `calloc()`, `realloc()` e `free()` são usadas para alocação dinâmica de memória.
 
 ```c
-char nome[10] = "João";
+int* numeros = malloc(5 * sizeof(int));
 ```
 
-## 3. Estruturas (structs)
-Uma estrutura é um tipo de dados definido pelo usuário que permite agrupar variáveis de tipos diferentes.
+## 2. Manipulação de arquivos
+Em C, você pode ler e escrever em arquivos usando as funções `fopen()`, `fclose()`, `fread()`, `fwrite()`, `fprintf()` e `fscanf()`.
 
 ```c
-struct Pessoa {
-    char nome[50];
-    int idade;
-};
+FILE* arquivo = fopen("arquivo.txt", "r");
 ```
 
-## 4. Uniões (unions)
-Uma união é semelhante a uma estrutura, mas permite armazenar diferentes tipos de dados no mesmo espaço de memória.
+## 3. Bibliotecas em C
+As bibliotecas em C são conjuntos de funções e macros pré-compiladas que podem ser reutilizadas. A biblioteca padrão de C inclui funções para matemática, manipulação de strings, manipulação de arquivos, etc.
 
 ```c
-union Exemplo {
-    int i;
-    float f;
-};
+#include <math.h>
+double raiz = sqrt(16.0);
 ```
 
-No próximo módulo, exploraremos a programação avançada em C. Fique ligado! 😊
+No próximo módulo, implementaremos um projeto abrangente que utiliza todos os conceitos aprendidos no curso. Fique ligado! 😊
+
+# Projeto Final
+
+O projeto final é uma oportunidade para aplicar todos os conceitos que você aprendeu ao longo deste curso. O objetivo é construir um programa completo e funcional em C.
+
+## Descrição do Projeto: Sistema de Gerenciamento de Biblioteca
+
+Você irá desenvolver um sistema de gerenciamento de biblioteca. O sistema deve ser capaz de:
+
+1. Adicionar um novo livro à biblioteca.
+2. Remover um livro da biblioteca.
+3. Pesquisar um livro por título ou autor.
+4. Mostrar todos os livros disponíveis na biblioteca.
+
+Cada livro deve ter as seguintes informações:
+
+- Título
+- Autor
+- Ano de publicação
+- Número de páginas
+
+## Requisitos
+
+1. Use estruturas (structs) para representar um livro.
+2. Use arrays ou alocação dinâmica de memória para armazenar os livros.
+3. Use funções para cada operação (adicionar, remover, pesquisar, mostrar).
+4. O programa deve ser interativo e o usuário deve ser capaz de realizar as operações através de um menu.
+
+## Avaliação
+
+O projeto será avaliado com base nos seguintes critérios:
+
+1. Correção: O programa funciona como esperado?
+2. Design do código: O código é bem estruturado e fácil de entender?
+3. Uso de conceitos aprendidos: O projeto aplica os conceitos aprendidos no curso?
+
+Boa sorte com o seu projeto! Lembre-se, a prática é a chave para aprender qualquer linguagem de programação. 😊
+
