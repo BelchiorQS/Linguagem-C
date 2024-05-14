@@ -23,7 +23,6 @@ int main() {
 
 Claro, vamos continuar com o segundo módulo do nosso curso de programação em C.
 
-```markdown
 # Módulo 2: Fundamentos da Linguagem C
 
 ## 1. Variáveis e tipos de dados
@@ -61,9 +60,6 @@ for (int i = 0; i < 10; i++) {
 
 No próximo módulo, exploraremos funções e ponteiros em C. Fique ligado! 😊
 
-Claro, vamos continuar com o terceiro módulo do nosso curso de programação em C.
-
-```markdown
 # Módulo 3: Funções e Ponteiros
 
 ## 1. Introdução às funções
@@ -98,6 +94,43 @@ Os ponteiros são variáveis que armazenam o endereço de outra variável. Eles 
 int x = 10;
 int* p = &x;
 ```
-```
 
 No próximo módulo, exploraremos estruturas de dados em C. Fique ligado! 😊
+
+# Módulo 4: Estruturas de Dados em C
+
+## 1. Arrays
+Um array é uma coleção de elementos do mesmo tipo. Você pode acessar os elementos de um array usando um índice.
+
+```c
+int numeros[5] = {1, 2, 3, 4, 5};
+```
+
+## 2. Strings
+Em C, as strings são arrays de caracteres terminados por um caractere nulo (`\0`).
+
+```c
+char nome[10] = "João";
+```
+
+## 3. Estruturas (structs)
+Uma estrutura é um tipo de dados definido pelo usuário que permite agrupar variáveis de tipos diferentes.
+
+```c
+struct Pessoa {
+    char nome[50];
+    int idade;
+};
+```
+
+## 4. Uniões (unions)
+Uma união é semelhante a uma estrutura, mas permite armazenar diferentes tipos de dados no mesmo espaço de memória.
+
+```c
+union Exemplo {
+    int i;
+    float f;
+};
+```
+
+No próximo módulo, exploraremos a programação avançada em C. Fique ligado! 😊
