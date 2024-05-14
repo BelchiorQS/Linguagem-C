@@ -22,8 +22,6 @@ int main() {
 ```
 
 Claro, vamos continuar com o segundo módulo do nosso curso de programação em C.
-
-```markdown
 # Módulo 2: Fundamentos da Linguagem C
 
 ## 1. Variáveis e tipos de dados
