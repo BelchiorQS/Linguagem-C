@@ -1,56 +1,13 @@
-name: Learn GitHub Actions
-
-on:
-  push:
-    branches:
-      - main
-
+name: learn-github-actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
 jobs:
-  setup-environment:
-    name: Setup Environment
+  check-bats-version:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
-
-      - name: Install Bats
-        run: npm install -g bats
-
-      - name: Run Bats
-        run: bats -v
-
-      - name: Setup Python
-        uses: actions/setup-python@v3
-        with:
-          python-version: '3.9'
-
-      - name: Setup Arduino
-        uses: arduino/setup-arduino-cli@v1
-
-      - name: Setup C#
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: '5.0.x'
-
-      - name: Setup Shell Script
-        run: sudo apt-get install shellcheck
-
-      - name: Notify on completion
-        uses: actions/github-script@v5
-        with:
-          script: |
-            const issueComment = `
-              :wave: Olá, @${{ github.actor }}. A configuração do ambiente foi concluída com sucesso!
-            `;
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: issueComment,
-            });
+      - run: npm install -g bats
+      - run: bats -v
