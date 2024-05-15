@@ -1,13 +1,41 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
+name: Learn GitHub Actions
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   check-bats-version:
+    name: Check Bats version
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: npm install -g bats
-      - run: bats -v
+
+      - name: Install Bats
+        run: npm install -g bats
+
+      - name: Run Bats
+        run: bats -v
+
+      - name: Notify on completion
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const issueComment = `
+              :wave: Olá, @${{ github.actor }}. A verificação da versão Bats foi concluída com sucesso!
+            `;
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: issueComment,
+            });
+
